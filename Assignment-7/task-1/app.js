@@ -5,7 +5,7 @@ let profession = prompt("WRITE YOUR PROFESSION?");
 let email = prompt("WRITE YOUR EMAIL?");
 let phonenumber = prompt("WRITE YOUR PHONE NUMBER?");
 
-let arr = []
+let arr = [];
 let obj = {
     name: name,
     age: age,
@@ -15,4 +15,19 @@ let obj = {
     phonenumber: phonenumber
 };
 arr.push(obj);
-console.log(arr);
+localStorage.setItem("userData", JSON.stringify(arr));
+
+let userContainer = document.getElementById("user-info");
+let retrievedData = JSON.parse(localStorage.getItem("userData")) || [];
+
+retrievedData.forEach((user) => {
+    userContainer.innerHTML += `
+        <p><strong>Name:</strong> ${user.name}</p>
+        <p><strong>Age:</strong> ${user.age}</p>
+        <p><strong>City:</strong> ${user.city}</p>
+        <p><strong>Profession:</strong> ${user.profession}</p>
+        <p><strong>Email:</strong> ${user.email}</p>
+        <p><strong>Phone Number:</strong> ${user.phonenumber}</p>
+        <hr>
+    `;
+});
