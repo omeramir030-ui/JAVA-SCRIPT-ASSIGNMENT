@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f4f7fb 0%, #e8eef7 50%, #dfe8f5 100%);
+    color: #22374a;
+}
+
+#user-info {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(34, 55, 74, 0.12);
+}
