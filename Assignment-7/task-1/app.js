@@ -31,3 +31,32 @@ retrievedData.forEach((user) => {
         <hr>
     `;
 });
+
+const toggleBtn = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+const themeText = document.getElementById('theme-text');
+
+const savedTheme = localStorage.getItem('theme');
+const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+let currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+
+applyTheme(currentTheme);
+
+toggleBtn.addEventListener('click', () => {
+  currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  applyTheme(currentTheme);
+  localStorage.setItem('theme', currentTheme);
+});
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  
+  if (theme === 'dark') {
+    themeIcon.textContent = '☀️';
+    themeText.textContent = 'Light Mode';
+  } else {
+    themeIcon.textContent = '🌙';
+    themeText.textContent = 'Dark Mode';
+  }
+}

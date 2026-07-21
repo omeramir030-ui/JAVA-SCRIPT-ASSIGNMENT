@@ -24,3 +24,39 @@ body {
     border-bottom: 2px solid #1f4e79;
     padding-bottom: 8px;
 }
+:root {
+  --bg-color: #ffffff;
+  --text-color: #1a1a1a;
+  --card-bg: #f4f4f5;
+  --btn-bg: #e4e4e7;
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #f4f4f5;
+  --card-bg: #1e1e24;
+  --btn-bg: #27272a;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: system-ui, -apple-system, sans-serif;
+  
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  padding: 2rem;
+}
+
+button {
+  background-color: var(--btn-bg);
+  color: var(--text-color);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
