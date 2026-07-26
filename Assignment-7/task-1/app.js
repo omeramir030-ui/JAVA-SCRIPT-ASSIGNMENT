@@ -5,58 +5,67 @@ let profession = prompt("WRITE YOUR PROFESSION?");
 let email = prompt("WRITE YOUR EMAIL?");
 let phonenumber = prompt("WRITE YOUR PHONE NUMBER?");
 
-let arr = [];
+let arr = JSON.parse(localStorage.getItem("userData")) || [];
+
 let obj = {
-    name: name,
-    age: age,
-    city: city,
-    profession: profession,
-    email: email,
-    phonenumber: phonenumber
+    name: name || "N/A",
+    age: age || "N/A",
+    city: city || "N/A",
+    profession: profession || "N/A",
+    email: email || "N/A",
+    phonenumber: phonenumber || "N/A"
 };
+
 arr.push(obj);
 localStorage.setItem("userData", JSON.stringify(arr));
 
 let userContainer = document.getElementById("user-info");
 let retrievedData = JSON.parse(localStorage.getItem("userData")) || [];
 
+userContainer.innerHTML = "";
+
 retrievedData.forEach((user) => {
     userContainer.innerHTML += `
-        <p><strong>Name:</strong> ${user.name}</p>
-        <p><strong>Age:</strong> ${user.age}</p>
-        <p><strong>City:</strong> ${user.city}</p>
-        <p><strong>Profession:</strong> ${user.profession}</p>
-        <p><strong>Email:</strong> ${user.email}</p>
-        <p><strong>Phone Number:</strong> ${user.phonenumber}</p>
-        <hr>
+        <div class="user-card">
+            <div><div>Name:</div> ${user.name}</div>
+            <div><div>Age:</div> ${user.age}</div>
+            <div><div>City:</div> ${user.city}</div>
+            <div><div>Profession:</div> ${user.profession}</div>
+            <div><div>Email:</div> ${user.email}</div>
+            <div><div>Phone Number:</div> ${user.phonenumber}</div>
+        </div>
     `;
 });
 
-const toggleBtn = document.getElementById('theme-toggle');
-const themeIcon = document.getElementById('theme-icon');
-const themeText = document.getElementById('theme-text');
+let toggleBtn = document.getElementById('theme-toggle');
+let themeIcon = document.getElementById('theme-icon');
+let themeText = document.getElementById('theme-text');
 
-const savedTheme = localStorage.getItem('theme');
-const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+let savedTheme = localStorage.getItem('theme');
+let systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
 let currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
 
+function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    
+    if (toggleBtn && themeIcon && themeText) {
+        if (theme === 'dark') {
+            themeIcon.textContent = '☀️';
+            themeText.textContent = 'Light Mode';
+        } else {
+            themeIcon.textContent = '🌙';
+            themeText.textContent = 'Dark Mode';
+        }
+    }
+}
+
 applyTheme(currentTheme);
 
-toggleBtn.addEventListener('click', () => {
-  currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
-  applyTheme(currentTheme);
-  localStorage.setItem('theme', currentTheme);
-});
-
-function applyTheme(theme) {
-  document.documentElement.setAttribute('data-theme', theme);
-  
-  if (theme === 'dark') {
-    themeIcon.textContent = '☀️';
-    themeText.textContent = 'Light Mode';
-  } else {
-    themeIcon.textContent = '🌙';
-    themeText.textContent = 'Dark Mode';
-  }
+if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+        currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        applyTheme(currentTheme);
+        localStorage.setItem('theme', currentTheme);
+    });
 }
