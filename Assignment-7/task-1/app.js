@@ -36,36 +36,3 @@ retrievedData.forEach((user) => {
         </div>
     `;
 });
-
-let toggleBtn = document.getElementById('theme-toggle');
-let themeIcon = document.getElementById('theme-icon');
-let themeText = document.getElementById('theme-text');
-
-let savedTheme = localStorage.getItem('theme');
-let systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-let currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
-
-function applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    
-    if (toggleBtn && themeIcon && themeText) {
-        if (theme === 'dark') {
-            themeIcon.textContent = '☀️';
-            themeText.textContent = 'Light Mode';
-        } else {
-            themeIcon.textContent = '🌙';
-            themeText.textContent = 'Dark Mode';
-        }
-    }
-}
-
-applyTheme(currentTheme);
-
-if (toggleBtn) {
-    toggleBtn.addEventListener('click', () => {
-        currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        applyTheme(currentTheme);
-        localStorage.setItem('theme', currentTheme);
-    });
-}
