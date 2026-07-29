@@ -31,30 +31,31 @@ const addStudent = () => {
 };
 
 function displayStudents() {
-    div.innerHTML = "";
+    let rows = "";
 
     if (studentData.length === 0) {
-        div.innerHTML = `
+        rows = `
             <tr>
-                <td colspan="4" class="empty-state">No student records found. Add one above.</td>
-            </tr>
-        `;
+                <td colspan="4" class="empty-cell">No student records found in system database.</td>
+            </tr>`;
+        div.innerHTML = rows;
         return;
     }
 
     studentData.forEach((dt) => {
-        div.innerHTML += `
+        rows += `
             <tr>
                 <td><strong>${dt.stdName}</strong></td>
                 <td>${dt.stdRoll}</td>
                 <td>${dt.stdAge}</td>
                 <td class="text-right">
                     <button class="btn-action edit" onclick="editStudent(${dt.id})">Edit</button>
-                    <button class="btn-action delete" onclick="deleteStudent(${dt.id})">Delete</button>
+                    <button class="btn-action del" onclick="deleteStudent(${dt.id})">Delete</button>
                 </td>
-            </tr>
-        `;
+            </tr>`;
     });
+
+    div.innerHTML = rows;
 }
 
 function deleteStudent(id) {
@@ -86,7 +87,7 @@ window.addEventListener("scroll", () => {
     for (let i = 0; i < reveals.length; i++) {
         const windowHeight = window.innerHeight;
         const elementTop = reveals[i].getBoundingClientRect().top;
-        const elementVisible = 100;
+        const elementVisible = 80;
         if (elementTop < windowHeight - elementVisible) {
             reveals[i].classList.add("active");
         }
