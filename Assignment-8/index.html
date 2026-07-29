@@ -1,131 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Management Dashboard</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Remix Icons / FontAwesome for clean iconography -->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management Dashboard</title>
+    <!-- Remixicons / FontAwesome for Dashboard Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="app-container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="logo">
-        <i class="ri-graduation-cap-fill"></i>
-        <span>EduPulse</span>
-      </div>
-      <nav class="nav-menu">
-        <a href="#" class="nav-item active"><i class="ri-dashboard-line"></i> Dashboard</a>
-        <a href="#" class="nav-item"><i class="ri-user-line"></i> Students</a>
-        <a href="#" class="nav-item"><i class="ri-book-read-line"></i> Courses</a>
-        <a href="#" class="nav-item"><i class="ri-calendar-check-line"></i> Attendance</a>
-        <a href="#" class="nav-item"><i class="ri-bar-chart-box-line"></i> Grades</a>
-        <a href="#" class="nav-item"><i class="ri-settings-3-line"></i> Settings</a>
-      </nav>
-    </aside>
 
-    <!-- Main Content -->
-    <main class="main-content">
-      <!-- Header -->
-      <header class="top-header">
-        <div class="search-bar">
-          <i class="ri-search-line"></i>
-          <input type="text" placeholder="Search students, subjects, IDs...">
-        </div>
-        <div class="header-actions">
-          <button class="icon-btn"><i class="ri-notification-3-line"></i></button>
-          <div class="user-profile">
-            <div class="avatar">OK</div>
-            <span>Admin</span>
-          </div>
-        </div>
-      </header>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="ri-graduation-cap-fill"></i>
+                <span>EduDash</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active"><i class="ri-dashboard-line"></i><span>Dashboard</span></a>
+                <a href="#" class="nav-item"><i class="ri-user-line"></i><span>Students</span></a>
+                <a href="#" class="nav-item"><i class="ri-book-open-line"></i><span>Courses</span></a>
+                <a href="#" class="nav-item"><i class="ri-settings-3-line"></i><span>Settings</span></a>
+            </nav>
+        </aside>
 
-      <!-- Stat Cards -->
-      <section class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-icon indigo"><i class="ri-team-line"></i></div>
-          <div class="stat-info">
-            <h3>1,248</h3>
-            <p>Total Students</p>
-          </div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon green"><i class="ri-checkbox-circle-line"></i></div>
-          <div class="stat-info">
-            <h3>94.2%</h3>
-            <p>Attendance Rate</p>
-          </div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon purple"><i class="ri-book-open-line"></i></div>
-          <div class="stat-info">
-            <h3>24</h3>
-            <p>Active Courses</p>
-          </div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon amber"><i class="ri-award-line"></i></div>
-          <div class="stat-info">
-            <h3>A (88%)</h3>
-            <p>Average Performance</p>
-          </div>
-        </div>
-      </section>
+        <!-- Main Content View -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-header">
+                <div class="search-bar">
+                    <i class="ri-search-line"></i>
+                    <input type="text" placeholder="Search student records...">
+                </div>
+                <div class="header-actions">
+                    <button class="icon-btn"><i class="ri-notification-3-line"></i></button>
+                    <div class="user-profile">
+                        <div class="avatar">A</div>
+                    </div>
+                </div>
+            </header>
 
-      <!-- Student Table Section -->
-      <section class="table-container">
-        <div class="table-header">
-          <h2>Student Directory</h2>
-          <button class="btn-primary"><i class="ri-user-add-line"></i> Add Student</button>
-        </div>
-        <table class="student-table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Student Name</th>
-              <th>Course / Grade</th>
-              <th>Attendance</th>
-              <th>Status</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>#ST-1021</td>
-              <td class="student-name">
-                <div class="avatar-sm">AH</div>
-                <span>Alex Hunter</span>
-              </td>
-              <td>Computer Studies</td>
-              <td>96%</td>
-              <td><span class="badge active">Enrolled</span></td>
-              <td class="actions">
-                <button class="action-btn"><i class="ri-edit-line"></i></button>
-                <button class="action-btn delete"><i class="ri-delete-bin-line"></i></button>
-              </td>
-            </tr>
-            <tr>
-              <td>#ST-1022</td>
-              <td class="student-name">
-                <div class="avatar-sm">SL</div>
-                <span>Sarah Lin</span>
-              </td>
-              <td>Mathematics</td>
-              <td>91%</td>
-              <td><span class="badge active">Enrolled</span></td>
-              <td class="actions">
-                <button class="action-btn"><i class="ri-edit-line"></i></button>
-                <button class="action-btn delete"><i class="ri-delete-bin-line"></i></button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-    </main>
-  </div>
-  <script src="app.js"></script>
+            <!-- Stats Grid -->
+            <section class="stats-grid reveal">
+                <div class="stat-card">
+                    <div class="stat-icon indigo"><i class="ri-user-group-line"></i></div>
+                    <div class="stat-info">
+                        <h3>1,250</h3>
+                        <p>Total Students</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green"><i class="ri-checkbox-circle-line"></i></div>
+                    <div class="stat-info">
+                        <h3>98%</h3>
+                        <p>Active Status</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon purple"><i class="ri-book-mark-line"></i></div>
+                    <div class="stat-info">
+                        <h3>24</h3>
+                        <p>Classes</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Input Form Section -->
+            <section class="form-container reveal">
+                <h2>Add New Student Record</h2>
+                <div class="student-form">
+                    <div class="input-group">
+                        <input type="text" id="name" placeholder="Student Name">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="roll" placeholder="Roll Number">
+                    </div>
+                    <div class="input-group">
+                        <input type="number" id="age" placeholder="Age">
+                    </div>
+                    <button class="btn-primary" onclick="addStudent()">Add</button>
+                </div>
+            </section>
+
+            <!-- Records Data Table -->
+            <section class="table-container reveal">
+                <div class="table-header">
+                    <h2>Student Records</h2>
+                </div>
+                <table class="student-table">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Roll Number</th>
+                            <th>Age</th>
+                            <th class="text-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="div">
+                        <!-- Student Rows populate dynamically from JS -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>

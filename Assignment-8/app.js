@@ -1,8 +1,10 @@
 let div = document.getElementById("div");
 let studentData = JSON.parse(localStorage.getItem("students")) || [];
 
+// Render initial data on load
 displayStudents();
 
+// Function to add a student
 const addStudent = () => {
     let name = document.getElementById("name");
     let roll = document.getElementById("roll");
@@ -12,7 +14,10 @@ const addStudent = () => {
     let stdRoll = roll.value.trim();
     let stdAge = age.value.trim();
 
-    if (!stdName || !stdRoll || !stdAge) return;
+    if (!stdName || !stdRoll || !stdAge) {
+        alert("Please fill in all input fields.");
+        return;
+    }
 
     const stdObject = {
         id: Date.now(),
@@ -24,12 +29,15 @@ const addStudent = () => {
     studentData.push(stdObject);
     localStorage.setItem("students", JSON.stringify(studentData));
 
+    // Clear input forms
     name.value = "";
     roll.value = "";
     age.value = "";
+
     displayStudents();
 };
 
+// Function to display the table records
 function displayStudents() {
     let rows = "";
 
@@ -58,12 +66,16 @@ function displayStudents() {
     div.innerHTML = rows;
 }
 
+// Function to delete a student record
 function deleteStudent(id) {
-    studentData = studentData.filter((student) => student.id !== id);
-    localStorage.setItem("students", JSON.stringify(studentData));
-    displayStudents();
+    if (confirm("Are you sure you want to delete this record?")) {
+        studentData = studentData.filter((student) => student.id !== id);
+        localStorage.setItem("students", JSON.stringify(studentData));
+        displayStudents();
+    }
 }
 
+// Function to edit an existing student record
 function editStudent(id) {
     let student = studentData.find((item) => item.id === id);
     if (!student) return;
@@ -73,25 +85,36 @@ function editStudent(id) {
     let newAge = prompt("Enter new age", student.stdAge);
 
     if (newName !== null && newRoll !== null && newAge !== null) {
-        if (!newName.trim() || !newRoll.trim() || !newAge.trim()) return;
+        if (!newName.trim() || !newRoll.trim() || !newAge.trim()) {
+            alert("Fields cannot be empty.");
+            return;
+        }
+
         student.stdName = newName.trim();
         student.stdRoll = newRoll.trim();
         student.stdAge = newAge.trim();
+
         localStorage.setItem("students", JSON.stringify(studentData));
         displayStudents();
     }
 }
 
-window.addEventListener("scroll", () => {
+// Scroll Reveal Animation Functionality
+const revealOnScroll = () => {
     const reveals = document.querySelectorAll(".reveal");
     for (let i = 0; i < reveals.length; i++) {
         const windowHeight = window.innerHeight;
         const elementTop = reveals[i].getBoundingClientRect().top;
         const elementVisible = 80;
+
         if (elementTop < windowHeight - elementVisible) {
             reveals[i].classList.add("active");
+        } else {
+            reveals[i].classList.remove("active");
         }
     }
-});
+};
 
-window.dispatchEvent(new Event("scroll"));
+window.addEventListener("scroll", revealOnScroll);
+// Run once on initial load to show visible sections
+revealOnScroll();
