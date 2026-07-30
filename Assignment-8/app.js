@@ -1,11 +1,9 @@
 let div = document.getElementById("div");
 let studentData = JSON.parse(localStorage.getItem("students")) || [];
 
-// Render initial data on load
 displayStudents();
 
-// Function to add a student
-const addStudent = () => {
+let addStudent = () => {
     let name = document.getElementById("name");
     let roll = document.getElementById("roll");
     let age = document.getElementById("age");
@@ -19,7 +17,7 @@ const addStudent = () => {
         return;
     }
 
-    const stdObject = {
+    let stdObject = {
         id: Date.now(),
         stdName,
         stdRoll,
@@ -29,7 +27,7 @@ const addStudent = () => {
     studentData.push(stdObject);
     localStorage.setItem("students", JSON.stringify(studentData));
 
-    // Clear input forms
+
     name.value = "";
     roll.value = "";
     age.value = "";
@@ -37,7 +35,6 @@ const addStudent = () => {
     displayStudents();
 };
 
-// Function to display the table records
 function displayStudents() {
     let rows = "";
 
@@ -66,7 +63,6 @@ function displayStudents() {
     div.innerHTML = rows;
 }
 
-// Function to delete a student record
 function deleteStudent(id) {
     if (confirm("Are you sure you want to delete this record?")) {
         studentData = studentData.filter((student) => student.id !== id);
@@ -75,7 +71,6 @@ function deleteStudent(id) {
     }
 }
 
-// Function to edit an existing student record
 function editStudent(id) {
     let student = studentData.find((item) => item.id === id);
     if (!student) return;
@@ -99,13 +94,13 @@ function editStudent(id) {
     }
 }
 
-// Scroll Reveal Animation Functionality
-const revealOnScroll = () => {
-    const reveals = document.querySelectorAll(".reveal");
+
+let revealOnScroll = () => {
+    let reveals = document.querySelectorAll(".reveal");
     for (let i = 0; i < reveals.length; i++) {
-        const windowHeight = window.innerHeight;
-        const elementTop = reveals[i].getBoundingClientRect().top;
-        const elementVisible = 80;
+        let windowHeight = window.innerHeight;
+        let elementTop = reveals[i].getBoundingClientRect().top;
+        let elementVisible = 80;
 
         if (elementTop < windowHeight - elementVisible) {
             reveals[i].classList.add("active");
@@ -116,5 +111,4 @@ const revealOnScroll = () => {
 };
 
 window.addEventListener("scroll", revealOnScroll);
-// Run once on initial load to show visible sections
 revealOnScroll();
