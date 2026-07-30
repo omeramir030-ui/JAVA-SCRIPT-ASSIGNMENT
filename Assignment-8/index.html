@@ -1,6 +1,6 @@
-!DOCTYPE html>
-
-<html class="light" lang="en"><head>
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>ScholarDesk - Student Directory</title>
@@ -11,7 +11,6 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <!-- Tailwind Config injected from Design System -->
@@ -181,12 +180,13 @@
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body-md min-h-screen paper-texture flex">
+
 <!-- SideNavBar Component -->
 <nav class="hidden md:flex flex-col bg-surface-container-low shadow-[4px_0px_24px_rgba(82,96,72,0.05)] h-screen w-72 rounded-r-xl overflow-hidden fixed left-0 top-0 p-6 z-40 transition-all duration-300">
 <!-- Header -->
 <div class="flex items-center gap-4 mb-8">
 <div class="w-12 h-12 rounded-full overflow-hidden bg-primary-container flex items-center justify-center hand-drawn-border">
-<img alt="Institution Logo" class="w-full h-full object-cover opacity-80" data-alt="A minimalist line-art logo of a classical academy building, representing a sophisticated educational institution. Soft earthy greens and cream colors, light mode aesthetic, clean and elegant design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVOKn7wpnBSFfrjKHXahlWdvkxeweAQEIUeQXrtONR1NOqDupyVIe9qFZ1-QhLgXuuDNXnbSKS0OfDwZ859kbwpJl7aIY5SGukwsiCYdIRthITzr3AAZZpduzfAeSsFYUqnSpvsMpB8kk1TujEMT42bcUI3OCJPZoFX9b2xZDm0HNXPsY7djBcXDiwENKDKqgGfZFkTMKq2Uaor_-1kKAWE3OEyV4VtWXf9dijj-VyCnYoeryzkNR5"/>
+<img alt="Institution Logo" class="w-full h-full object-cover opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVOKn7wpnBSFfrjKHXahlWdvkxeweAQEIUeQXrtONR1NOqDupyVIe9qFZ1-QhLgXuuDNXnbSKS0OfDwZ859kbwpJl7aIY5SGukwsiCYdIRthITzr3AAZZpduzfAeSsFYUqnSpvsMpB8kk1TujEMT42bcUI3OCJPZoFX9b2xZDm0HNXPsY7djBcXDiwENKDKqgGfZFkTMKq2Uaor_-1kKAWE3OEyV4VtWXf9dijj-VyCnYoeryzkNR5"/>
 </div>
 <div>
 <h1 class="font-headline-md text-headline-md text-primary m-0">Academy Portal</h1>
@@ -195,52 +195,48 @@
 </div>
 <!-- Primary Navigation -->
 <div class="flex flex-col gap-2 flex-grow mt-4">
-<!-- Dashboard -->
 <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-variant/50 hover:translate-x-1 transition-all duration-200 group" href="#">
-<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="dashboard">dashboard</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">dashboard</span>
 <span class="font-label-sm text-label-sm">Dashboard</span>
 </a>
-<!-- Student Directory (Active) -->
 <a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container rounded-xl font-semibold opacity-90 transition-opacity" href="#">
-<span class="material-symbols-outlined" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
 <span class="font-label-sm text-label-sm">Student Directory</span>
 </a>
-<!-- Course Modules -->
 <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-variant/50 hover:translate-x-1 transition-all duration-200 group" href="#">
-<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="book_2">book_2</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">book_2</span>
 <span class="font-label-sm text-label-sm">Course Modules</span>
 </a>
-<!-- Live Status -->
 <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-variant/50 hover:translate-x-1 transition-all duration-200 group" href="#">
-<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="sensors">sensors</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">sensors</span>
 <span class="font-label-sm text-label-sm">Live Status</span>
 </a>
-<!-- Reports -->
 <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-variant/50 hover:translate-x-1 transition-all duration-200 group" href="#">
-<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="analytics">analytics</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">analytics</span>
 <span class="font-label-sm text-label-sm">Reports</span>
 </a>
 </div>
 <!-- CTA -->
-<button class="mt-4 mb-8 w-full py-3 px-4 bg-primary text-on-primary rounded-xl font-label-sm text-label-sm flex items-center justify-center gap-2 hover:bg-on-primary-fixed-variant transition-colors shadow-sm hand-drawn-card">
+<button onclick="document.getElementById('name').focus()" class="mt-4 mb-8 w-full py-3 px-4 bg-primary text-on-primary rounded-xl font-label-sm text-label-sm flex items-center justify-center gap-2 hover:bg-on-primary-fixed-variant transition-colors shadow-sm hand-drawn-card">
 <span class="material-symbols-outlined text-[18px]">add</span>
             New Entry
-        </button>
+</button>
 <!-- Footer Navigation -->
 <div class="flex flex-col gap-2 mt-auto border-t border-outline-variant/30 pt-4">
 <a class="flex items-center gap-3 px-4 py-2 rounded-xl text-on-surface-variant hover:bg-surface-variant/50 transition-colors" href="#">
-<span class="material-symbols-outlined text-outline" data-icon="help_outline">help_outline</span>
+<span class="material-symbols-outlined text-outline">help_outline</span>
 <span class="font-label-sm text-label-sm">Support</span>
 </a>
 <a class="flex items-center gap-3 px-4 py-2 rounded-xl text-on-surface-variant hover:bg-surface-variant/50 transition-colors" href="#">
-<span class="material-symbols-outlined text-outline" data-icon="logout">logout</span>
+<span class="material-symbols-outlined text-outline">logout</span>
 <span class="font-label-sm text-label-sm">Logout</span>
 </a>
 </div>
 </nav>
+
 <!-- Main Content Canvas -->
 <main class="flex-1 md:ml-72 min-h-screen p-margin-mobile md:p-margin-desktop max-w-container-max mx-auto w-full">
-<!-- Top App Bar / Header (Mobile visible, Desktop specialized) -->
+<!-- Top App Bar / Header -->
 <header class="flex justify-between items-end mb-gutter pb-4 hand-drawn-border-bottom">
 <div>
 <p class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-1">ScholarDesk</p>
@@ -251,10 +247,11 @@
 <span class="material-symbols-outlined">search</span>
 </button>
 <div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
-<img alt="Administrator profile picture" class="w-full h-full object-cover" data-alt="Profile picture of an administrator, a mature person with a warm smile, wearing glasses, soft professional lighting, earth tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6gcN9DOBM_2glAUSpklGh7OWVu12OI-nRPbQuS82DOb8q656JmRKbnjVVcZ8EVcy6HmArGeFMvP7akKQhNu9tpDt1hjDv7TZ1AyqwRttFh2bvR0E3NlXeZ2jgIzflB9ci974JVPN_ixbwhhtsuAn0VCtGO-TWgOT1RDfQ-t0VYYOghF_tGUIDAhwTMHUgJPJQzNZvWtcj7tD3VPpskGqRLxQ4oc_Nr2jZ2yuSfp8hWwnJXVw7oUk6"/>
+<img alt="Administrator profile picture" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6gcN9DOBM_2glAUSpklGh7OWVu12OI-nRPbQuS82DOb8q656JmRKbnjVVcZ8EVcy6HmArGeFMvP7akKQhNu9tpDt1hjDv7TZ1AyqwRttFh2bvR0E3NlXeZ2jgIzflB9ci974JVPN_ixbwhhtsuAn0VCtGO-TWgOT1RDfQ-t0VYYOghF_tGUIDAhwTMHUgJPJQzNZvWtcj7tD3VPpskGqRLxQ4oc_Nr2jZ2yuSfp8hWwnJXVw7oUk6"/>
 </div>
 </div>
 </header>
+
 <!-- Bento Grid Layout -->
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
 <!-- Global Actions & Status Panel (Left/Top Col) -->
@@ -282,16 +279,15 @@
 </div>
 </div>
 </div>
-<!-- Soft hand-drawn progress bar -->
 <div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden flex">
 <div class="h-full bg-primary" style="width: 83%"></div>
 <div class="h-full bg-outline-variant" style="width: 17%"></div>
 </div>
 </div>
 </div>
+
 <!-- Course Summary -->
 <div class="bg-surface-bright p-6 hand-drawn-card border border-outline-variant shadow-sm relative">
-<!-- Pin decoration -->
 <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 bg-secondary rounded-full shadow-md z-20 border-2 border-surface flex items-center justify-center">
 <div class="w-2 h-2 bg-secondary-fixed rounded-full"></div>
 </div>
@@ -326,15 +322,17 @@
 </li>
 </ul>
 </div>
+
 <!-- Action Button -->
-<button class="w-full py-4 px-6 bg-primary text-on-primary font-body-lg text-body-lg rounded-2xl flex items-center justify-center gap-3 hover:bg-surface-tint transition-all shadow-[0_4px_14px_rgba(82,96,72,0.2)] hover:shadow-none hover:translate-y-1 hand-drawn-border">
+<button onclick="document.getElementById('name').focus()" class="w-full py-4 px-6 bg-primary text-on-primary font-body-lg text-body-lg rounded-2xl flex items-center justify-center gap-3 hover:bg-surface-tint transition-all shadow-[0_4px_14px_rgba(82,96,72,0.2)] hover:shadow-none hover:translate-y-1 hand-drawn-border">
 <span class="material-symbols-outlined">person_add</span>
                     Enroll New Student
-                </button>
+</button>
 </div>
+
 <!-- Student Directory (Right/Main Col) -->
-<div class="lg:col-span-8 bg-surface-container-lowest p-1 md:p-8 rounded-xl border border-outline-variant/50 shadow-sm">
-<div class="flex justify-between items-center mb-6 px-4 md:px-0">
+<div class="lg:col-span-8 bg-surface-container-lowest p-4 md:p-8 rounded-xl border border-outline-variant/50 shadow-sm">
+<div class="flex justify-between items-center mb-6">
 <h3 class="font-headline-md text-headline-md text-on-surface">Directory List</h3>
 <div class="flex gap-2">
 <button class="p-2 rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container-low transition-colors">
@@ -345,127 +343,123 @@
 </button>
 </div>
 </div>
-<!-- Directory Grid/List -->
-<div class="flex flex-col gap-4">
-<!-- Student Row 1 -->
-<div class="group flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-surface rounded-xl border border-transparent hover:border-outline-variant/50 hover:bg-surface-container-low transition-all">
-<div class="flex items-center gap-4 mb-4 sm:mb-0">
-<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-surface-container-highest flex-shrink-0">
-<img alt="Student avatar" class="w-full h-full object-cover" data-alt="Portrait of a young female student with dark curly hair, looking bright and attentive, wearing a knitted sweater, soft lighting, earthy tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEhEsmVQDPVAXo5cxaJeXf0Cwe6HHW_hy62O1rasHZWqTwwKmvTbVP-fzNUBO60MDtJyi5jYdj9nP6_uc4j0G3_5o_Gv7TavOQpihJBj4jeHGXKTvVN0Ui0WMh5IGM7jWom-5ijczIgQXDdpQwOB4ESJlKO9a0nRzFlOuYQEEineRTfIoNBcwt5AhWuyBgtsvk79dMxDCuE8B3ANBdfTiuKtPG4BREjdHgtG9bs1E23n0w6OkRrEYC"/>
+
+<!-- Enrollment Form Panel -->
+<div class="mb-6 p-4 bg-surface-container-low rounded-xl border border-outline-variant/50 hand-drawn-card">
+  <h4 class="font-headline-md text-body-lg font-semibold text-on-surface mb-3 flex items-center gap-2">
+    <span class="material-symbols-outlined text-primary">add_circle</span> Add New Student
+  </h4>
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
+    <input type="text" id="name" placeholder="Student Name" class="p-3 border border-outline-variant rounded-lg bg-surface text-on-surface focus:outline-none focus:border-primary font-body-md">
+    <input type="text" id="roll" placeholder="Roll Number" class="p-3 border border-outline-variant rounded-lg bg-surface text-on-surface focus:outline-none focus:border-primary font-body-md">
+    <input type="number" id="age" placeholder="Age" class="p-3 border border-outline-variant rounded-lg bg-surface text-on-surface focus:outline-none focus:border-primary font-body-md">
+  </div>
+  <button onclick="addStudent()" class="px-5 py-2.5 bg-primary text-on-primary font-label-sm text-label-sm rounded-lg hover:bg-surface-tint transition-colors hand-drawn-card flex items-center gap-2">
+    <span class="material-symbols-outlined text-[18px]">check</span> Save Student
+  </button>
+</div>
+
+<!-- Dynamic Container & Preserved Mock Student Cards -->
+<div id="div" class="flex flex-col gap-4">
+
+<!-- Card 1: Eleanor Vance -->
+<div class="p-4 bg-surface rounded-xl border border-outline-variant/50 hover:border-outline transition-all duration-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-variant border border-outline-variant flex-shrink-0">
+<img alt="Portrait of Eleanor Vance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC6gSj_bCevZ361B8p76m2jP4nNn1e86Tyt12vG7h1r6j-zM612a4H4h6SstT1K8M5Vv1c3v5Zp8K-q4-h0-c7K-8kP9nN-g=s1600"/>
 </div>
 <div>
-<h4 class="font-body-md font-semibold text-on-surface m-0">Eleanor Vance</h4>
-<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Literature &amp; Arts • Cohort '25</p>
+<h4 class="font-body-lg font-semibold text-on-surface m-0 group-hover:text-primary transition-colors">Eleanor Vance</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant m-0">ID: #89420 • Classical Lit</p>
 </div>
 </div>
-<div class="flex items-center justify-between sm:justify-end gap-6 w-full sm:w-auto">
-<!-- Status Badge -->
-<div class="flex items-center gap-1.5 px-3 py-1 rounded-full border border-primary text-primary bg-primary-container/20">
-<div class="w-2 h-2 rounded-full bg-primary"></div>
-<span class="font-label-sm text-[11px] uppercase tracking-wider">Active</span>
+<div class="flex items-center gap-6 w-full sm:w-auto justify-between sm:justify-end border-t sm:border-t-0 border-outline-variant/30 pt-3 sm:pt-0">
+<div class="text-left sm:text-right">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-container text-on-primary-container">
+                                    Active
+                                </span>
+<p class="font-label-sm text-xs text-on-surface-variant mt-1 m-0">GPA: 3.92</p>
 </div>
-<!-- Actions -->
-<div class="flex gap-2 opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity">
-<button class="p-2 rounded-lg text-outline hover:text-primary hover:bg-primary-fixed transition-colors" title="Edit">
-<span class="material-symbols-outlined text-sm">edit</span>
-</button>
-<button class="p-2 rounded-lg text-outline hover:text-error hover:bg-error-container transition-colors" title="Delete">
-<span class="material-symbols-outlined text-sm">delete</span>
+<button class="p-2 text-outline hover:text-primary rounded-lg hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
 </button>
 </div>
 </div>
-</div>
-<!-- Divider -->
-<div class="w-[90%] mx-auto h-[1px] bg-outline-variant/30"></div>
-<!-- Student Row 2 -->
-<div class="group flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-surface rounded-xl border border-transparent hover:border-outline-variant/50 hover:bg-surface-container-low transition-all">
-<div class="flex items-center gap-4 mb-4 sm:mb-0">
-<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-surface-container-highest flex-shrink-0">
-<img alt="Student avatar" class="w-full h-full object-cover" data-alt="Portrait of a male student with short blonde hair and glasses, looking studious, wearing a casual button-down shirt, soft natural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEcvERMLPUP4lsbnuch1-H8hln7KEqkDxTRFpPjSfE99oL8X1EeE70z7nGD8UUCsh2TlqLb1um0OtzWL_pYcGqO3zKqaK8hr7itq5A9DrrcB1y8RJGWPrZAZjY7caA6BWq3QcIQP3ihR_QV04gJQByL5zHsYF6rityy4AFwnVaHVThoy4Ku9mhjhNkI9Y3DSWciIZulFeutWcC7a-0DhVwI1XTcRuvpHhyTWeRmutt6kHcbKr_5gHf"/>
+
+<!-- Card 2: Julian Freyr -->
+<div class="p-4 bg-surface rounded-xl border border-outline-variant/50 hover:border-outline transition-all duration-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-variant border border-outline-variant flex-shrink-0">
+<img alt="Portrait of Julian Freyr" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB26A0x9z0g4yN16fH5bH7sK3pM4yT6R-9n8vB3xZ7cS8nL4k-J2vV9b8M7c5H4g3F2e1D0cB9a8_z7x6w5v4u3t2s1r0q=s1600"/>
 </div>
 <div>
-<h4 class="font-body-md font-semibold text-on-surface m-0">Arthur Pendelton</h4>
-<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Botany &amp; Sciences • Cohort '24</p>
+<h4 class="font-body-lg font-semibold text-on-surface m-0 group-hover:text-primary transition-colors">Julian Freyr</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant m-0">ID: #89421 • Botany 101</p>
 </div>
 </div>
-<div class="flex items-center justify-between sm:justify-end gap-6 w-full sm:w-auto">
-<!-- Status Badge -->
-<div class="flex items-center gap-1.5 px-3 py-1 rounded-full border border-outline text-outline bg-surface-variant/50">
-<div class="w-2 h-2 rounded-full border border-outline"></div>
-<span class="font-label-sm text-[11px] uppercase tracking-wider">Offline</span>
+<div class="flex items-center gap-6 w-full sm:w-auto justify-between sm:justify-end border-t sm:border-t-0 border-outline-variant/30 pt-3 sm:pt-0">
+<div class="text-left sm:text-right">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary-container text-on-secondary-container">
+                                    On Leave
+                                </span>
+<p class="font-label-sm text-xs text-on-surface-variant mt-1 m-0">GPA: 3.45</p>
 </div>
-<!-- Actions -->
-<div class="flex gap-2 opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity">
-<button class="p-2 rounded-lg text-outline hover:text-primary hover:bg-primary-fixed transition-colors" title="Edit">
-<span class="material-symbols-outlined text-sm">edit</span>
-</button>
-<button class="p-2 rounded-lg text-outline hover:text-error hover:bg-error-container transition-colors" title="Delete">
-<span class="material-symbols-outlined text-sm">delete</span>
+<button class="p-2 text-outline hover:text-primary rounded-lg hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
 </button>
 </div>
 </div>
-</div>
-<!-- Divider -->
-<div class="w-[90%] mx-auto h-[1px] bg-outline-variant/30"></div>
-<!-- Student Row 3 -->
-<div class="group flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-surface rounded-xl border border-transparent hover:border-outline-variant/50 hover:bg-surface-container-low transition-all">
-<div class="flex items-center gap-4 mb-4 sm:mb-0">
-<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-surface-container-highest flex-shrink-0">
-<img alt="Student avatar" class="w-full h-full object-cover" data-alt="Portrait of a young woman with a hijab, smiling gently, wearing a warm earth-toned scarf, soft ambient light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMrAEOVXR1aN4d5PTGAGKIOcoMkUk12zTmW1cI651YskXf7Te6FwxXaXc_b7_vWPV38TGbtPiOTVmZlwfyG1YjWMKPiverybn9k1_M8pTevR1F60C4v5Tq2Eik5PdmjX1lotXfOOnHdHm2dDu9BjaV0jrDqn2wrZD4CPCG6cHRYm02QE6xbICSD2PlrX1aPhZ5xUZUV9STNKsd0NYungO4BTIk1jUbrCxvUhpXLLcnxWS7UCGAWE3P"/>
+
+<!-- Card 3: Clara Bell -->
+<div class="p-4 bg-surface rounded-xl border border-outline-variant/50 hover:border-outline transition-all duration-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-variant border border-outline-variant flex-shrink-0">
+<img alt="Portrait of Clara Bell" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA28m_x3y4z5w6v7u8t9s0r1q2p3o4n5m6l7k8j9i0h1g2f3e4d5c6b7a8_z9y8x7w6v5u4t3s2r1q0p9o8n7m6=s1600"/>
 </div>
 <div>
-<h4 class="font-body-md font-semibold text-on-surface m-0">Zainab Al-Farsi</h4>
-<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Design Theory • Cohort '25</p>
+<h4 class="font-body-lg font-semibold text-on-surface m-0 group-hover:text-primary transition-colors">Clara Bell</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant m-0">ID: #89422 • Design Theory</p>
 </div>
 </div>
-<div class="flex items-center justify-between sm:justify-end gap-6 w-full sm:w-auto">
-<!-- Status Badge -->
-<div class="flex items-center gap-1.5 px-3 py-1 rounded-full border border-primary text-primary bg-primary-container/20">
-<div class="w-2 h-2 rounded-full bg-primary"></div>
-<span class="font-label-sm text-[11px] uppercase tracking-wider">Active</span>
+<div class="flex items-center gap-6 w-full sm:w-auto justify-between sm:justify-end border-t sm:border-t-0 border-outline-variant/30 pt-3 sm:pt-0">
+<div class="text-left sm:text-right">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-container text-on-primary-container">
+                                    Active
+                                </span>
+<p class="font-label-sm text-xs text-on-surface-variant mt-1 m-0">GPA: 3.88</p>
 </div>
-<!-- Actions -->
-<div class="flex gap-2 opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity">
-<button class="p-2 rounded-lg text-outline hover:text-primary hover:bg-primary-fixed transition-colors" title="Edit">
-<span class="material-symbols-outlined text-sm">edit</span>
-</button>
-<button class="p-2 rounded-lg text-outline hover:text-error hover:bg-error-container transition-colors" title="Delete">
-<span class="material-symbols-outlined text-sm">delete</span>
+<button class="p-2 text-outline hover:text-primary rounded-lg hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
 </button>
 </div>
 </div>
-</div>
-<!-- Divider -->
-<div class="w-[90%] mx-auto h-[1px] bg-outline-variant/30"></div>
-<!-- Student Row 4 -->
-<div class="group flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-surface rounded-xl border border-transparent hover:border-outline-variant/50 hover:bg-surface-container-low transition-all">
-<div class="flex items-center gap-4 mb-4 sm:mb-0">
-<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-surface-container-highest flex-shrink-0">
-<img alt="Student avatar" class="w-full h-full object-cover" data-alt="Portrait of a male student with a beard, looking thoughtfully away from camera, wearing a dark green sweater, subtle grain texture in photo." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpTf6XV0k8-58tBsMobD_qHmXvTKV5idDJG-GOsQpFuMDAjo7UoBJgNzGIqW8XTKRQsG2eQ4uUlqlrzUyukGOPfSaRt3plz0EIuhlq-sqHw5uFept35y0Sv_T6jkCTkk1Jalqxwk9u7UNLww5lNPRsrxem_wRHGdDVsmQNtCfH178-R7z_tUhOJuOA6qP2YiwPM0-k8NEzQOWoysUBfLD9t-HDUQJtX1qF9MykEj5RW32J8yiM1mvL"/>
+
+<!-- Card 4: Arthur Pendelton -->
+<div class="p-4 bg-surface rounded-xl border border-outline-variant/50 hover:border-outline transition-all duration-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-variant border border-outline-variant flex-shrink-0">
+<img alt="Portrait of Arthur Pendelton" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC11b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6_a7b8c9d0e1f2g3h4i5j6k7l8m9n0=s1600"/>
 </div>
 <div>
-<h4 class="font-body-md font-semibold text-on-surface m-0">Silas Thorne</h4>
-<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Philosophy • Cohort '23</p>
+<h4 class="font-body-lg font-semibold text-on-surface m-0 group-hover:text-primary transition-colors">Arthur Pendelton</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant m-0">ID: #89423 • Classical Lit</p>
 </div>
 </div>
-<div class="flex items-center justify-between sm:justify-end gap-6 w-full sm:w-auto">
-<!-- Status Badge -->
-<div class="flex items-center gap-1.5 px-3 py-1 rounded-full border border-primary text-primary bg-primary-container/20">
-<div class="w-2 h-2 rounded-full bg-primary"></div>
-<span class="font-label-sm text-[11px] uppercase tracking-wider">Active</span>
+<div class="flex items-center gap-6 w-full sm:w-auto justify-between sm:justify-end border-t sm:border-t-0 border-outline-variant/30 pt-3 sm:pt-0">
+<div class="text-left sm:text-right">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-container text-on-primary-container">
+                                    Active
+                                </span>
+<p class="font-label-sm text-xs text-on-surface-variant mt-1 m-0">GPA: 3.15</p>
 </div>
-<!-- Actions -->
-<div class="flex gap-2 opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity">
-<button class="p-2 rounded-lg text-outline hover:text-primary hover:bg-primary-fixed transition-colors" title="Edit">
-<span class="material-symbols-outlined text-sm">edit</span>
-</button>
-<button class="p-2 rounded-lg text-outline hover:text-error hover:bg-error-container transition-colors" title="Delete">
-<span class="material-symbols-outlined text-sm">delete</span>
+<button class="p-2 text-outline hover:text-primary rounded-lg hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
 </button>
 </div>
 </div>
+
 </div>
-</div>
+
 <!-- Pagination / Load More -->
 <div class="mt-8 flex justify-center">
 <button class="px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container transition-colors hand-drawn-border">
@@ -474,6 +468,8 @@
 </div>
 </div>
 </div>
-<script src="app.js"></script>
 </main>
-</body></html>
+
+<script src="app.js" defer></script>
+</body>
+</html>

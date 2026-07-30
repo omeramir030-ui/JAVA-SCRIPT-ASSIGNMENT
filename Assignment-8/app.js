@@ -1,114 +1,103 @@
-let div = document.getElementById("div");
-let studentData = JSON.parse(localStorage.getItem("students")) || [];
 
-displayStudents();
+let students = JSON.parse(localStorage.getItem('students')) || [];
 
-let addStudent = () => {
-    let name = document.getElementById("name");
-    let roll = document.getElementById("roll");
-    let age = document.getElementById("age");
 
-    let stdName = name.value.trim();
-    let stdRoll = roll.value.trim();
-    let stdAge = age.value.trim();
+function renderStudents() {
+  let container = document.getElementById('div');
+  if (!container) return;
 
-    if (!stdName || !stdRoll || !stdAge) {
-        alert("Please fill in all input fields.");
-        return;
-    }
+  
+  container.innerHTML = '';
 
-    let stdObject = {
-        id: Date.now(),
-        stdName,
-        stdRoll,
-        stdAge
+  students.forEach((student, index) => {
+    let card = document.createElement('div');
+    card.className = "p-4 bg-surface rounded-xl border border-outline-variant/50 hover:border-outline transition-all duration-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 group mb-4";
+
+    card.innerHTML = `
+      <!-- Left side: Info with Clear Labels -->
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-full overflow-hidden bg-primary-container/20 border border-outline-variant flex items-center justify-center text-primary font-bold flex-shrink-0">
+          <span class="material-symbols-outlined">person</span>
+        </div>
+        <div>
+          <h4 class="font-body-lg font-semibold text-on-surface m-0 group-hover:text-primary transition-colors capitalize">
+            ${student.name}
+          </h4>
+          <div class="font-label-sm text-label-sm text-on-surface-variant m-0 mt-1 flex gap-3">
+            <span><strong class="text-on-surface">Roll No:</strong> ${student.roll}</span>
+            <span>•</span>
+            <span><strong class="text-on-surface">Age:</strong> ${student.age}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side: Action Buttons -->
+      <div class="flex items-center gap-2 w-full sm:w-auto justify-end border-t sm:border-t-0 border-outline-variant/30 pt-3 sm:pt-0">
+        <button onclick="editStudent(${index})" class="px-3 py-1.5 text-xs font-semibold rounded-lg text-primary hover:bg-primary-container/30 transition-colors flex items-center gap-1">
+          <span class="material-symbols-outlined text-[16px]">edit</span> Edit
+        </button>
+        <button onclick="deleteStudent(${index})" class="px-3 py-1.5 text-xs font-semibold rounded-lg text-error hover:bg-error-container/30 transition-colors flex items-center gap-1">
+          <span class="material-symbols-outlined text-[16px]">delete</span> Delete
+        </button>
+      </div>
+    `;
+
+    container.appendChild(card);
+  });
+}
+
+
+function addStudent() {
+  let nameInput = document.getElementById('name');
+  let rollInput = document.getElementById('roll');
+  let ageInput = document.getElementById('age');
+
+  if (!nameInput.value || !rollInput.value || !ageInput.value) {
+    alert("Please fill in all fields");
+    return;
+  }
+
+  let newStudent = {
+    name: nameInput.value.trim(),
+    roll: rollInput.value.trim(),
+    age: ageInput.value.trim()
+  };
+
+  students.push(newStudent);
+  localStorage.setItem('students', JSON.stringify(students));
+
+  
+    nameInput.value = '';
+  rollInput.value = '';
+  ageInput.value = '';
+
+  renderStudents();
+}
+
+
+function deleteStudent(index) {
+  students.splice(index, 1);
+  localStorage.setItem('students', JSON.stringify(students));
+  renderStudents();
+}
+
+
+function editStudent(index) {
+  let student = students[index];
+  let newName = prompt("Edit Name:", student.name);
+  let newRoll = prompt("Edit Roll Number:", student.roll);
+  let newAge = prompt("Edit Age:", student.age);
+
+  if (newName && newRoll && newAge) {
+    students[index] = {
+      name: newName.trim(),
+      roll: newRoll.trim(),
+      age: newAge.trim()
     };
-
-    studentData.push(stdObject);
-    localStorage.setItem("students", JSON.stringify(studentData));
-
-
-    name.value = "";
-    roll.value = "";
-    age.value = "";
-
-    displayStudents();
-};
-
-function displayStudents() {
-    let rows = "";
-
-    if (studentData.length === 0) {
-        rows = `
-            <tr>
-                <td colspan="4" class="empty-cell">No student records found in system database.</td>
-            </tr>`;
-        div.innerHTML = rows;
-        return;
-    }
-
-    studentData.forEach((dt) => {
-        rows += `
-            <tr>
-                <td><strong>${dt.stdName}</strong></td>
-                <td>${dt.stdRoll}</td>
-                <td>${dt.stdAge}</td>
-                <td class="text-right">
-                    <button class="btn-action edit" onclick="editStudent(${dt.id})">Edit</button>
-                    <button class="btn-action del" onclick="deleteStudent(${dt.id})">Delete</button>
-                </td>
-            </tr>`;
-    });
-
-    div.innerHTML = rows;
-}
-
-function deleteStudent(id) {
-    if (confirm("Are you sure you want to delete this record?")) {
-        studentData = studentData.filter((student) => student.id !== id);
-        localStorage.setItem("students", JSON.stringify(studentData));
-        displayStudents();
-    }
-}
-
-function editStudent(id) {
-    let student = studentData.find((item) => item.id === id);
-    if (!student) return;
-
-    let newName = prompt("Enter new name", student.stdName);
-    let newRoll = prompt("Enter new roll number", student.stdRoll);
-    let newAge = prompt("Enter new age", student.stdAge);
-
-    if (newName !== null && newRoll !== null && newAge !== null) {
-        if (!newName.trim() || !newRoll.trim() || !newAge.trim()) {
-            alert("Fields cannot be empty.");
-            return;
-        }
-
-        student.stdName = newName.trim();
-        student.stdRoll = newRoll.trim();
-        student.stdAge = newAge.trim();
-
-        localStorage.setItem("students", JSON.stringify(studentData));
-        displayStudents();
-    }
+    localStorage.setItem('students', JSON.stringify(students));
+    renderStudents();
+  }
 }
 
 
-let revealOnScroll = () => {
-    let reveals = document.querySelectorAll(".reveal");
-    for (let i = 0; i < reveals.length; i++) {
-        let windowHeight = window.innerHeight;
-        let elementTop = reveals[i].getBoundingClientRect().top;
-        let elementVisible = 80;
-
-        if (elementTop < windowHeight - elementVisible) {
-            reveals[i].classList.add("active");
-        } else {
-            reveals[i].classList.remove("active");
-        }
-    }
-};
-
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
+document.addEventListener('DOMContentLoaded', renderStudents);
